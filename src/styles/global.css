@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 transition-colors duration-300;
+  }
+}
+
+body {
+  background: #eae8e8;
+  font-family: 'Roboto', sans-serif;
+}
+
+.dark body, .dark .bg-transparent {
+  background-color: #1a202c;
+}
+
+.dark p.text-xl, .dark h3.text-2xl, .dark .text-footer{
+  color: #fff;
+}
+
+.dark .bg-white {
+  background-color: #2d3748;
+}
+
+.dark p {
+  color: #2d3748;
+}
+
+.dark .text-gray-600, .dark h2{
+  color: white;
+}
+
+.dark .shadow-md {
+  background: #fff;
+  box-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.1), 0 2px 4px -1px rgba(255, 255, 255, 0.06);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.fade-in-section {
+  opacity: 0;
+  transform: translateY(20vh);
+  visibility: hidden;
+  transition: opacity 1200ms ease-out, transform 600ms ease-out, visibility 1200ms ease-out;
+  will-change: opacity, transform, visibility;
+}
+
+.fade-in-section.is-visible {
+  opacity: 1;
+  transform: none;
+  visibility: visible;
+}

@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Services from '../components/Services';
+import DetailedServices from '../components/DetailedServices';
+import GlobeSection from '../components/GlobeSection.tsx';
+import Contact from '../components/Contact';
+import TechSlider from '../components/TechSlider';
+import HeroSlider from "../components/HeroSlider";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import Background from '../components/Background.astro';
+
+let initialDarkMode = false;
+if (typeof window !== 'undefined') {
+  // Establece el estado inicial según la preferencia del usuario
+  initialDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+}
+
+---
+
+<Layout title="DevSolutions">
+  <div class={`min-h-screen ${initialDarkMode ? 'dark' : ''}`}>
+    <Header client:load/>
+    <HeroSlider client:load/>
+    <Services client:load/>
+    <DetailedServices client:load/>
+    
+    <Background />
+    <TechSlider client:load/>
+    <Contact />
+    <Footer />
+  </div>
+</Layout>
